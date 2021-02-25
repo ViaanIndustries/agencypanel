@@ -1,0 +1,43 @@
+<?php
+
+namespace App\Services\Paytm;
+
+
+use Config;
+
+// following files need to be included
+require_once("./lib/config_paytm.php");
+require_once("./lib/encdec_paytm.php");
+
+class Paytm
+{
+
+
+    /**
+     * @var $serverKey
+     */
+    private $serverKey = '';
+
+
+    public function __construct()
+    {
+
+        //$serverKey = 'AAAAxVBoWj0:APA91bHCBc0enJm0Rq0gkUg5uk4SMS1BoDPonk6GnvFh9JB9THIffnHKtMEAsU6KTEIldOJZXfnmKLbD664G3WduUIeKgHI3ePnzWSqMRw89RotvRi--0pjbpIQtT4npPn-JgTkpaVnx';
+        // $serverKey = Config::get('gcp.firebase_server_key');
+        // $this->setServerKey($serverKey);
+    }
+
+
+
+    public function generateChecksum($requestData)
+    {
+
+
+
+    }
+
+
+
+
+
+}
