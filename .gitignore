@@ -10,7 +10,7 @@ Homestead.yaml
 npm-debug.log
 .idea
 .idea/workspace.xml
-*.env
+*.env*
 .env.*.php
 .env.php
 composer.phar
