@@ -18,4 +18,5 @@ composer.lock
 *.csv
 cf.txt
 /storage/*
-.env*
+.env
+.env.example
