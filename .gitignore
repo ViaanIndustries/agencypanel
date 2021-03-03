@@ -1,0 +1,22 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/.idea
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+.idea
+.idea/workspace.xml
+*.env*
+.env.*.php
+.env.php
+composer.phar
+composer.lock
+*.csv
+cf.txt
+/storage/*
+.env
+.env.example
