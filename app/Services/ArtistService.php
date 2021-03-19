@@ -68,10 +68,10 @@ class ArtistService
         return $results;
     }
 
-    public function artistList()
+    public function artistList($request)
     {
         $error_messages = $results = [];
-        $results = $this->repObj->artistList();
+        $results = $this->repObj->artistList($request);
 
         return ['error_messages' => $error_messages, 'results' => $results];
     }

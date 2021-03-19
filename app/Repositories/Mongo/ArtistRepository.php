@@ -118,11 +118,12 @@ class ArtistRepository extends AbstractRepository implements ArtistInterface
     }
 
 
-    public function artistList()
+    public function artistList($request)
     {
+        $agency_id = $request->session()->get('agency_id');
         $artist_role_ids = \App\Models\Role::where('slug', 'artist')->pluck('_id');
         $artist_role_ids = ($artist_role_ids) ? $artist_role_ids->toArray() : [];
-        $artists         = \App\Models\Cmsuser::whereIn('roles', $artist_role_ids)->get()->pluck('full_name', '_id');
+        $artists         = \App\Models\Cmsuser::where('agency',$agency_id)->whereIn('roles', $artist_role_ids)->get()->pluck('full_name', '_id');
         return $artists;
     }
 
