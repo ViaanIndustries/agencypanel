@@ -9,7 +9,7 @@ use App\Services\ArtistService;
 use App\Services\RoleService;
 use App\Services\AgencyService;
 use App\Services\CmsuserService;
-;
+
 
 use Input;
 
