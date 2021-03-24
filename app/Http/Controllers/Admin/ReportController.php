@@ -31,8 +31,7 @@ class ReportController extends Controller
 
     public function getSessionReport(Request $request)
     {
-
-        $viewdata = [];
+         $viewdata = [];
         $responseData = $this->liveservice->index($request);
         $viewdata['lives'] = $responseData['lives'];
         $viewdata['total_earning_doller']          = (isset($responseData['total_earning_doller'])) ? $responseData['total_earning_doller'] : 0;
@@ -41,10 +40,10 @@ class ReportController extends Controller
 
         $artists = $this->artistservice->artistList($request);
         $viewdata['artists'] = (isset($artists['results'])) ? $artists['results'] : [];
-
         $viewdata['appends_array'] = $responseData['appends_array'];
         $viewdata['page_title'] = $this->page_title;
         $viewdata['page_desc'] = $this->page_desc;
+
 
         return view('admin.reports.session_report', $viewdata);
     }

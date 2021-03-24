@@ -12,8 +12,6 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function () {
         Route::resource('producer', 'ProducerController');
         Route::resource('cmsusers', 'CmsuserController');
         Route::get('/session-report', [ 'as' => 'report.session', 'uses' => 'ReportController@getSessionReport']);
-
-
     });// authentication middleware
 
 });

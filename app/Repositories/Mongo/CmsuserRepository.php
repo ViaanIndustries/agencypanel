@@ -135,6 +135,8 @@ class CmsuserRepository extends AbstractRepository implements CmsuserInterface
 
     public function store($postData)
     {
+
+
         $error_messages = array();
         $data = array_except($postData, ['password_confirmation']);
 
@@ -148,7 +150,7 @@ class CmsuserRepository extends AbstractRepository implements CmsuserInterface
         $user->save();
         $this->syncRoles($postData, $user);
         $this->artistConfig($postData, $user);
-        return $user;
+                return $user;
     }
 
 

@@ -186,6 +186,10 @@
                             <td>
                                 {!! Form::submit('Search', array('class' => 'btn btn-block btn-primary')) !!}
                                 {!! link_to('session-report','Reset', array('class' => 'btn btn-block btn-default')) !!}
+                                {!! Form::submit('Export', 'Exportdd',array('class' => 'btn btn-block btn-primary')) !!}
+
+{{--                                {!! link_to('export','Export', array('class' => 'btn btn-block btn-default')) !!}--}}
+
 
                             </td>
                         </div>
@@ -228,6 +232,10 @@
                                     </thead>
                                     <tbody>
                                     @forelse ($lives as $value)
+                                    <?php
+                                      
+
+                                        ?>
                                         <tr>
                                             <td><img style="height:100px; width:100px"
                                                      src= <?php echo apply_cloudfront_url($value['artist']['picture']) ?> >
