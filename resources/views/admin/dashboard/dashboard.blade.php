@@ -50,7 +50,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Today Earning</span>
-              <span class="info-box-number">2,000</span>
+              <span class="info-box-number">{{$agency_revenue}}</span>
             </div>
             <!-- /.info-box-content -->
           </div>

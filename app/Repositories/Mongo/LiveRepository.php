@@ -537,7 +537,7 @@ class LiveRepository extends AbstractRepository implements LiveInterface
         $artist_id = (isset($requestData['artist_id']) && $requestData['artist_id'] != '') ? $requestData['artist_id'] : '';
         $created_at = (isset($requestData['created_at']) && $requestData['created_at'] != '') ? hyphen_date($requestData['created_at']) : '';
         $created_at_end = (isset($requestData['created_at_end']) && $requestData['created_at_end'] != '') ? hyphen_date($requestData['created_at_end']) : '';
-          $appends_array = array('artist_id' => $artist_id,  'sort' => $sort, 'agency_id' => $agency_id, 'created_at' => $created_at,
+        $appends_array = array('artist_id' => $artist_id,  'sort' => $sort, 'agency_id' => $agency_id, 'created_at' => $created_at,
             'created_at_end' => $created_at_end, 'sort' => $sort);
 
         $items = $this->getLiveHistory($requestData)->paginate($perpage);

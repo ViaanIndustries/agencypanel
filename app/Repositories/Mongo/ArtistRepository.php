@@ -393,8 +393,6 @@ class ArtistRepository extends AbstractRepository implements ArtistInterface
 
             $ret['artist']['config'] = $artist_config_data;
         }
-
-
         return $ret;
     }
 

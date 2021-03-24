@@ -112,8 +112,7 @@ class ProducerController extends Controller
         'hot_likes'=>0
     ];
         $request['agency'] = Session::get('agency_id');
-
-       $response = $this->cmsuserservice->store($request);     
+       $response = $this->cmsuserservice->store($request);
        if(!empty($response['error_messages'])) {
              return Redirect::back()->withInput();
        }

@@ -52,10 +52,11 @@ class DashboardController extends Controller
         ];
 
         $responseSalesData = $this->artistservice->getAgencyDashboard($requestData);
+        $artist_list = ($responseSalesData['artist_list']->toArray());
         $viewdata['artist_count'] = intval($responseSalesData['artist_count']);
         $viewdata['live_session_count'] = intval($responseSalesData['live_session_count']);
         $viewdata['total_coins'] = intval($responseSalesData['total_coins']);
-        
+        $viewdata['agency_revenue'] = $this->artistservice->getTotalEarning($artist_list);
         return view('admin.dashboard.dashboard', $viewdata);
 
     }
