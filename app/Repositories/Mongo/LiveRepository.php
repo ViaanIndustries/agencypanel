@@ -551,7 +551,7 @@ class LiveRepository extends AbstractRepository implements LiveInterface
         $results['appends_array'] = $appends_array;
         return $results;
     }
-    public function getLiveHistory($requestData,$perpage = NULL)
+        public function getLiveHistory($requestData,$perpage = NULL)
     {
         $perpage = ($perpage == NULL) ? Config::get('app.perpage') : intval($perpage);
         $sort = (isset($requestData['sort']) && $requestData['sort'] != '') ? $requestData['sort'] : '';
@@ -561,8 +561,11 @@ class LiveRepository extends AbstractRepository implements LiveInterface
         $created_at = (isset($requestData['created_at']) && $requestData['created_at'] != '') ? hyphen_date($requestData['created_at']) : '';
         $created_at_end = (isset($requestData['created_at_end']) && $requestData['created_at_end'] != '') ? hyphen_date($requestData['created_at_end']) : '';
 
+        $artist_role_ids = \App\Models\Role::where('slug', 'artist')->pluck('_id');
+        $artist_role_ids = ($artist_role_ids) ? $artist_role_ids->toArray() : [];
 
-        $artist_list = Cmsuser::where('agency', $agency_id)->pluck('_id');
+
+        $artist_list = Cmsuser::where('agency', $agency_id)->whereIn('roles', $artist_role_ids)->pluck('_id');
         $query = Live::where('is_refund', '<>', true)->with(array('artist' => function ($q) {
             $q->select('_id', 'picture', 'coins', 'stats', 'first_name', 'last_name', 'about_us', 'city', 'agency', 'mobile', 'email', 'dob');
         }));
