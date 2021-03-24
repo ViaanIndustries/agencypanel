@@ -23,13 +23,8 @@ use Carbon;
 
 use App\Repositories\Contracts\LiveInterface;
 use App\Services\ArtistService;
-use App\Services\PassbookService;
-use App\Services\AccountService;
-
-use App\Services\Image\Kraken;
-use App\Services\Cache\AwsElasticCacheRedis;
-use App\Models\UpcomingEvents;
-
+ 
+ 
 class LiveService {
 
     protected $repObj;
@@ -41,18 +36,16 @@ class LiveService {
 
     private $cache_expire_time = 600; // 10 minutes in seconds
 
-    public function __construct(LiveInterface $repObj, ArtistService $serviceArtist, Kraken $kraken, PassbookService $servicePassbook, AccountService $serviceAccount, AwsElasticCacheRedis $cache) {
+    public function __construct(LiveInterface $repObj, ArtistService $serviceArtist) {
         $this->repObj       = $repObj;
         $this->serviceArtist= $serviceArtist;
-        $this->kraken       = $kraken;
-        $this->servicePassbook  = $servicePassbook;
-        $this->serviceAccount   = $serviceAccount;
-        $this->cache            = $cache;
-    }
+     }
 
 
     public function index($request) {
         $data       = $request->all();
+        $agency_id = $request->session()->get('agency_id');
+        $data['agency_id'] = $agency_id;
         $results    = $this->repObj->index($data);
 
         return $results;

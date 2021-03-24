@@ -9,7 +9,7 @@ use App\Services\ArtistService;
 use App\Services\RoleService;
 use App\Services\AgencyService;
 use App\Services\CmsuserService;
-;
+
 
 use Input;
 
@@ -112,8 +112,7 @@ class ProducerController extends Controller
         'hot_likes'=>0
     ];
         $request['agency'] = Session::get('agency_id');
-
-       $response = $this->cmsuserservice->store($request);     
+       $response = $this->cmsuserservice->store($request);
        if(!empty($response['error_messages'])) {
              return Redirect::back()->withInput();
        }

@@ -45,16 +45,14 @@ class AuthController extends Controller
     public function setGreeting()
     {
         $hour = date('H');
-        $dayTerm = ($hour > 17) ? "Evening" : ($hour > 12) ? "Afternoon" : "Morning";
+        $dayTerm = "Luck";//($hour > 17) ? "Evening" : ($hour > 12) ? "Afternoon" : "Morning";
         $this->greeting_msg = "Good " . $dayTerm;
     }
-
 
     public function setQuote()
     {
         $this->quote = $this->quote_arr[array_rand($this->quote_arr)];
     }
-
 
     public function cmsUserLogin(Request $request)
     {
