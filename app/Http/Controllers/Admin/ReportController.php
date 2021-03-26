@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 use App\Services\ArtistService;
 use App\Services\AgencyService;
 use App\Services\LiveService;
-
+use App\Services\Export\ArtistLiveSessionExport;
+use Excel;
 
 class ReportController extends Controller
 {
@@ -29,10 +30,31 @@ class ReportController extends Controller
 
     }
 
+    public function export($request)
+    {
+        $data = $request->all();
+        $agency_id = $request->session()->get('agency_id');
+        $data['agency_id'] = $agency_id;
+        
+        return Excel::download(new ArtistLiveSessionExport($data), 'artist_live_session_report.xlsx');
+    }
+
     public function getSessionReport(Request $request)
     {
          $viewdata = [];
-        $responseData = $this->liveservice->index($request);
+
+         switch ($request->actionbutton) {
+
+            case 'Search':
+                $responseData = $this->liveservice->index($request);
+                break;
+
+            case 'Export':
+                return $this->export($request);
+                break;
+            default:
+                $responseData = $this->liveservice->index($request);
+        }
         $viewdata['lives'] = $responseData['lives'];
         $viewdata['total_earning_doller']          = (isset($responseData['total_earning_doller'])) ? $responseData['total_earning_doller'] : 0;
         $viewdata['coins']          = (isset($responseData['coins'])) ? $responseData['coins'] : 0;

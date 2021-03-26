@@ -184,8 +184,14 @@
 
                         <div class="col-md-2">
                             <td>
-                                {!! Form::submit('Search', array('class' => 'btn btn-block btn-primary')) !!}
-                                {!! link_to('session-report','Reset', array('class' => 'btn btn-block btn-default')) !!}
+
+                                {!! Form::submit( 'Search', ['class' => 'btn btn-primary', 'name' => 'actionbutton', 'value' => 'search'])!!}
+            {!! link_to('session-report','Reset', array('class' => 'btn btn-warning ')) !!}
+
+          {!! Form::submit( 'Export', ['class' => 'btn btn-danger', 'name' => 'actionbutton', 'value' => 'export'])!!}
+
+
+
 
 
 
