@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "f781497aa0b2d5860d6d1d3a627ec73a",
+=======
+    "content-hash": "5f00dbda97843f5fda491b8bec3fde7b",
+>>>>>>> 376187868a6aadd6b3561a70a458da0e373b351c
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -2287,6 +2291,73 @@
             "time": "2021-01-18T20:58:21+00:00"
         },
         {
+<<<<<<< HEAD
+=======
+            "name": "maatwebsite/excel",
+            "version": "3.1.29",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Maatwebsite/Laravel-Excel.git",
+                "reference": "1e567e6e19a04fd65b5876d5bc92f4015f09fab4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Maatwebsite/Laravel-Excel/zipball/1e567e6e19a04fd65b5876d5bc92f4015f09fab4",
+                "reference": "1e567e6e19a04fd65b5876d5bc92f4015f09fab4",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/support": "5.8.*|^6.0|^7.0|^8.0",
+                "php": "^7.0|^8.0",
+                "phpoffice/phpspreadsheet": "1.16.*"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0",
+                "predis/predis": "^1.1"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Maatwebsite\\Excel\\ExcelServiceProvider"
+                    ],
+                    "aliases": {
+                        "Excel": "Maatwebsite\\Excel\\Facades\\Excel"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Maatwebsite\\Excel\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Patrick Brouwers",
+                    "email": "patrick@maatwebsite.nl"
+                }
+            ],
+            "description": "Supercharged Excel exports and imports in Laravel",
+            "keywords": [
+                "PHPExcel",
+                "batch",
+                "csv",
+                "excel",
+                "export",
+                "import",
+                "laravel",
+                "php",
+                "phpspreadsheet"
+            ],
+            "time": "2021-03-16T11:56:39+00:00"
+        },
+        {
+>>>>>>> 376187868a6aadd6b3561a70a458da0e373b351c
             "name": "maennchen/zipstream-php",
             "version": "2.1.0",
             "source": {
@@ -2782,6 +2853,7 @@
         },
         {
             "name": "myclabs/php-enum",
+<<<<<<< HEAD
             "version": "1.7.7",
             "source": {
                 "type": "git",
@@ -2792,16 +2864,37 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/myclabs/php-enum/zipball/d178027d1e679832db9f38248fcc7200647dc2b7",
                 "reference": "d178027d1e679832db9f38248fcc7200647dc2b7",
+=======
+            "version": "1.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/myclabs/php-enum.git",
+                "reference": "46cf3d8498b095bd33727b13fd5707263af99421"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/myclabs/php-enum/zipball/46cf3d8498b095bd33727b13fd5707263af99421",
+                "reference": "46cf3d8498b095bd33727b13fd5707263af99421",
+>>>>>>> 376187868a6aadd6b3561a70a458da0e373b351c
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
+<<<<<<< HEAD
                 "php": ">=7.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "^7",
                 "squizlabs/php_codesniffer": "1.*",
                 "vimeo/psalm": "^3.8"
+=======
+                "php": "^7.3 || ^8.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "1.*",
+                "vimeo/psalm": "^4.5.1"
+>>>>>>> 376187868a6aadd6b3561a70a458da0e373b351c
             },
             "type": "library",
             "autoload": {
@@ -2824,7 +2917,11 @@
             "keywords": [
                 "enum"
             ],
+<<<<<<< HEAD
             "time": "2020-11-14T18:14:52+00:00"
+=======
+            "time": "2021-02-15T16:11:48+00:00"
+>>>>>>> 376187868a6aadd6b3561a70a458da0e373b351c
         },
         {
             "name": "nesbot/carbon",

@@ -9,10 +9,11 @@ use App\Services\ArtistService;
 use App\Services\RoleService;
 use App\Services\AgencyService;
 use App\Services\CmsuserService;
+use App\Services\Export\ArtistExport;
 
 
 use Input;
-
+use Maatwebsite\Excel\Facades\Excel;
 
 use Config;
 use Session;
@@ -24,6 +25,7 @@ class ProducerController extends Controller
      protected $roleservice;
     protected $agencyservice;
     protected $cmsuserservice;
+ //   protected $artistexport;
 
 
     public function __construct( ArtistService $artistservice, RoleService $roleservice,  AgencyService $agencyservice , CmsuserService $cmsuserservice )
@@ -32,10 +34,18 @@ class ProducerController extends Controller
           $this->roleservice = $roleservice;
          $this->agencyservice = $agencyservice;
          $this->cmsuserservice = $cmsuserservice;
+//         $this->artistexport = $artistexport;
 
          $this->page_title="My Artist";
          $this->page_desc="List of my artist";
 
+    }
+
+
+    public function export($request)
+    {
+        $data = $request->all();
+        return Excel::download(new ArtistExport($data), 'artist_list.xlsx');
     }
 
     /**
@@ -46,7 +56,20 @@ class ProducerController extends Controller
     public function index(Request $request)
     {
         $viewdata = [];
-        $responseData                                       = $this->artistservice->index($request);
+
+        switch ($request->actionbutton) {
+
+            case 'Search':
+                $responseData = $this->artistservice->index($request);
+                break;
+
+            case 'Export':
+                return $this->export($request)  ; //->artistexport->export_artist($request);
+                break;
+            default:
+                $responseData = $this->artistservice->index($request);
+        }
+
         $viewdata['artists']                                = $responseData['artists'];
         $viewdata['appends_array']                          = $responseData['appends_array'];
         $viewdata['page_title']                        = $this->page_title;

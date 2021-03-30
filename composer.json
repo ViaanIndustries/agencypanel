@@ -20,8 +20,12 @@
         "laravel/tinker": "^1.0",
         "laravelcollective/html": "^6.2",
         "league/flysystem-aws-s3-v3": "^1.0",
+<<<<<<< HEAD
         "myclabs/php-enum": "^1.7",
         "phpoffice/phpspreadsheet": "1.16",
+=======
+        "maatwebsite/excel": "^3.1",
+>>>>>>> 376187868a6aadd6b3561a70a458da0e373b351c
         "predis/predis": "^1.1"
     },
     "require-dev": {

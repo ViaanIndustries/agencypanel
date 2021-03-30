@@ -109,11 +109,14 @@
             </div>
             <div class="col-md-2">
             <td>
-                                    {!! Form::submit('Search', array('class' => 'btn btn-block btn-primary')) !!} 
-                                    {!! link_to('producer','Reset', array('class' => 'btn btn-block btn-default')) !!}
-                                    <a href="/producer/create" class="btn btn-block btn-info">Create Artist</a>                                   
 
-                                </td>
+            {!! Form::submit( 'Search', ['class' => 'btn btn-primary', 'name' => 'actionbutton', 'value' => 'search'])!!}
+            {!! link_to('producer','Reset', array('class' => 'btn btn-warning ')) !!}
+
+            {!! link_to('/producer/create','Create Artist', array('class' => 'btn btn-warning ')) !!}
+          {!! Form::submit( 'Export', ['class' => 'btn btn-danger', 'name' => 'actionbutton', 'value' => 'export'])!!}
+
+         </td>
             </div>
          </div>
          <!-- /.box-body -->
