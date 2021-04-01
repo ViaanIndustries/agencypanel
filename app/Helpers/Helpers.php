@@ -39,7 +39,7 @@ function print_pretty($data)
 	echo "<pre>";
 	print_r($data);
 	echo "<pre>";
-	exit;
+	//exit;
 
 }
 
