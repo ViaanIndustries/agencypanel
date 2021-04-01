@@ -47,7 +47,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">DOB </label>
-                    <input type='text' name="created_at_end" class='form-control dob'
+                    <input type='text' name="dob" class='form-control dob'
                            value="" ui-jp="datetimepicker"
                            ui-options="{
                                         format: 'YYYY/MM/DD',
