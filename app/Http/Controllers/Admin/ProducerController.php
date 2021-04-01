@@ -113,12 +113,11 @@ class ProducerController extends Controller
             'email' => 'required',
             'city' => 'required',
             'signature_msg' => 'required',
-            'mobile' => 'required|digits:10',
+            'mobile' => 'required',
             'password' => 'required',
             'coins' => 'required',
             'platform' => 'required',
-            'dob' => 'required',
-            'picture' => 'required',
+            'picture' => 'required'
 
         ]);
         if ($validator->fails()) {
@@ -139,6 +138,7 @@ class ProducerController extends Controller
         ];
         $request['agency'] = Session::get('agency_id');
         $response = $this->cmsuserservice->store($request);
+
         if (!empty($response['error_messages'])) {
             return Redirect::back()->withInput();
         }
