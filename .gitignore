@@ -20,3 +20,5 @@ cf.txt
 /storage/*
 .env
 .env.example
+/vendor
+

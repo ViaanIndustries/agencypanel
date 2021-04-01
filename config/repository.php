@@ -95,7 +95,7 @@ return [
         // App\Repositories\Contracts\CastInterface::class => App\Repositories\Mongo\CastRepository::class,
         // App\Repositories\Contracts\GenreInterface::class => App\Repositories\Mongo\GenreRepository::class,
           App\Repositories\Contracts\LanguageInterface::class => App\Repositories\Mongo\LanguageRepository::class,
-        // App\Repositories\Contracts\LiveInterface::class => App\Repositories\Mongo\LiveRepository::class,
+         App\Repositories\Contracts\LiveInterface::class => App\Repositories\Mongo\LiveRepository::class,
         // App\Repositories\Contracts\BucketlangInterface::class => App\Repositories\Mongo\BucketlangRepository::class,
         // App\Repositories\Contracts\RewardProgramInterface::class => App\Repositories\Mongo\RewardProgramRepository::class,
          App\Repositories\Contracts\AgencyInterface::class => App\Repositories\Mongo\AgencyRepository::class,

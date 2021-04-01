@@ -41,8 +41,7 @@
             </span>
 	 	</a>
 	</li>
-	
- 
+
       	
 	
        <li class="treeview">
@@ -50,13 +49,12 @@
             <i class="fa fa-files-o"></i>
             <span>Reports</span>
             <span class="pull-right-container">
-              <span class="label label-primary pull-right">2</span>
+              <span class="label label-primary pull-right">1</span>
             </span>
           </a>
           <ul class="treeview-menu">
-          <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Artist </a></li>
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-table"></i>Create Artist</a></li>
-            </ul>
+          <li><a href="{{route('admin.report.session')}}" ><i class="fa fa-circle-o"></i> Live Session Report </a></li>
+             </ul>
         </li>
         <li>
         

@@ -68,10 +68,10 @@ class ArtistService
         return $results;
     }
 
-    public function artistList()
+    public function artistList($request)
     {
         $error_messages = $results = [];
-        $results = $this->repObj->artistList();
+        $results = $this->repObj->artistList($request);
 
         return ['error_messages' => $error_messages, 'results' => $results];
     }
@@ -960,13 +960,41 @@ class ArtistService
 
         return $ret;
     }
-
     public function getAgencyDashboard()
     {
         $results = [];
         $results['artist_count'] = $this->repObj->getArtistQuery('')->count();
         $results['live_session_count'] = $this->repObj->getArtistQuery('')->sum('stats.sessions');
         $results['total_coins'] = $this->repObj->getArtistQuery('')->sum('stats.coins');
+        $results['artist_list'] = $this->repObj->getArtistQuery('')->pluck('_id');
+
         return $results;
+    }
+
+    public function getTotalEarning($artist_id)
+    {
+         $perpage = 5000;
+        $query  = \App\Models\Live::whereIn('artist_id', $artist_id)->where('is_refund', '<>', true)->where('is_end',true)->orderBy('end_at','desc');
+        $rows        = $query->paginate($perpage);
+        $results = $rows->toArray();
+        $total_live_sessions =  0;
+        $total_earned =0;
+        if(!empty($results['data']))
+        {
+            $total = 0;
+            foreach($results['data'] as $r)
+            {
+                $doller_rate =isset($r['doller_rate']) ? $r['doller_rate'] : 0.003;
+                $liveearn = (isset($r['stats']['coin_spent']) ? $r['stats']['coin_spent'] : 0000)   * $doller_rate;
+                $final = number_format($liveearn, 2, '.', '');
+
+                $total += $final;
+                $earn = $total;
+                $total_earned =  number_format($earn, 2, '.', '');
+            }
+
+
+        }
+        return $total_earned;
     }
 }

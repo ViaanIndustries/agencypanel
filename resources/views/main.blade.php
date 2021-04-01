@@ -95,10 +95,22 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 
-
  <script>
 
- 
+     //Date picker
+     $('.only_date').datepicker({
+         format: 'dd/mm/yyyy',
+         autoclose: true
+     });
+
+
+     //Date picker
+     $('.dob').datepicker({
+         format: 'yyyy-mm-dd',
+         autoclose: true
+     })
+
+
 </script>
 
 

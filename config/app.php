@@ -38,6 +38,8 @@ return [
     | application. If disabled, a simple generic error page is shown.
     |
     */
+	Maatwebsite\Excel\ExcelServiceProvider::class,
+
 
     'debug' => env('APP_DEBUG', true),
 
@@ -166,6 +168,8 @@ return [
         Kreait\Laravel\Firebase\ServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Maatwebsite\Excel\ExcelServiceProvider::class,
+
 
 
 
@@ -237,6 +241,9 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Input' => Illuminate\Support\Facades\Input::class,
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
+
+
 
 
     ],
