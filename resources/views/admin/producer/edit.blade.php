@@ -47,7 +47,7 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">DOB </label>
-                   {!! Form::text('dob', old('dob'), array('class' => 'form-control', 'id'=> 'name', 'placeholder' => 'Enter DOB' )) !!}
+                   {!! Form::text('dob', old('dob'), array('class' => 'form-control dob', 'id'=> 'name', 'ui-jp'=>'datetimepicker' , 'placeholder' => 'Enter DOB' )) !!}
 
                 </div>
 
@@ -68,13 +68,13 @@
                 </div>
                 <div class="form-group">
                   <label for="exampleInputPassword1">Mobile</label>
-                   {!! Form::text('mobile', old('mobile'), array('class' => 'form-control', 'id'=> 'name', 'placeholder' => 'Enter mobile' )) !!}
+                   {!! Form::number('mobile', old('mobile'), array('class' => 'form-control', 'id'=> 'name', 'placeholder' => 'Enter mobile' )) !!}
 
                 </div>
 
                 <div class="form-group">
                   <label for="exampleInputPassword1">Coins</label>
-                   {!! Form::text('coins', old('coins'), array('class' => 'form-control', 'id'=> 'name', 'placeholder' => 'Enter session entry fee' )) !!}
+                   {!! Form::number('coins', old('coins'), array( 'min'=>49 , 'max' =>1000000, 'class' => 'form-control', 'id'=> 'name', 'placeholder' => 'Enter session entry fee' )) !!}
 
                 </div>
                 <div class="form-group">
