@@ -76,7 +76,8 @@ class CmsuserService
 
                 $parmas = ['file' => $request->file('picture'), 'type' => 'artistprofile'];
                 $photo  =   $this->kraken->uploadToAws($parmas);
-                if(!empty($photo) && !empty($photo['success']) && $photo['success'] === true && !empty($photo['results'])){
+
+          if(!empty($photo) && !empty($photo['success']) && $photo['success'] === true && !empty($photo['results'])){
                     array_set($data, 'photo', $photo['results']);
                 }
             }
@@ -88,7 +89,6 @@ class CmsuserService
             $data['is_featured'] = $is_featured;
             $data['is_beneficial'] = $is_beneficial;
 	        $data['coins'] = $coins;
-
             $results['cmsuser'] = $this->repObj->store($data);
         }
 
@@ -100,10 +100,8 @@ class CmsuserService
     {
         $data = $request->all();
         $error_messages = $results = [];
- 
-        //------------------------------------Kraken Image Compression--------------------------------------------
+         //------------------------------------Kraken Image Compression--------------------------------------------
         if ($request->hasFile('picture')) {
-
             $parmas = ['file' => $request->file('picture'), 'type' => 'artistprofile'];
             $photo  =   $this->kraken->uploadToAws($parmas);
             if(!empty($photo) && !empty($photo['success']) && $photo['success'] === true && !empty($photo['results'])){
