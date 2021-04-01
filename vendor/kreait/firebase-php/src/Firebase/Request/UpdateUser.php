@@ -11,11 +11,11 @@ use Kreait\Firebase\Value\Provider;
 
 final class UpdateUser implements Request
 {
+    use EditUserTrait;
+
     public const DISPLAY_NAME = 'DISPLAY_NAME';
     public const PHOTO_URL = 'PHOTO_URL';
     public const EMAIL = 'EMAIL';
-
-    use EditUserTrait;
 
     /** @var array<string> */
     private $attributesToDelete = [];
@@ -39,8 +39,6 @@ final class UpdateUser implements Request
      * @param array<string, mixed> $properties
      *
      * @throws InvalidArgumentException when invalid properties have been provided
-     *
-     * @return static
      */
     public static function withProperties(array $properties): self
     {

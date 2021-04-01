@@ -145,8 +145,7 @@ class CmsuserRepository extends AbstractRepository implements CmsuserInterface
  	    if (isset($postData['photo']) && isset($postData['photo']['thumb'])) {
             array_set($data, 'picture', $postData['photo']['thumb']);
         }
-
-        $user = new $this->model($data);
+         $user = new $this->model($data);
         $user->save();
         $this->syncRoles($postData, $user);
         $this->artistConfig($postData, $user);
