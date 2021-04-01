@@ -141,7 +141,7 @@
                   <table id="usertable" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
                      <thead>
                         <tr class="active-heading">
-                           <th>Artist Pic</th>
+                           <th>Artist Picture</th>
                            <th>Basic Info</th>
                            <th>Statistics</th>
                            <th>Status</th>
