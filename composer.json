@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.2",
+        "ext-curl": "*",
         "barryvdh/laravel-debugbar": "^3.3",
         "fideloper/proxy": "^4.0",
         "jenssegers/mongodb": "^3.6",
@@ -23,9 +24,7 @@
         "maatwebsite/excel": "^3.1",
         "myclabs/php-enum": "^1.7",
         "phpoffice/phpspreadsheet": "1.16",
-        "predis/predis": "^1.1",
-        "ext-curl": "*"
-
+        "predis/predis": "^1.1"
     },
     "require-dev": {
         "facade/ignition": "^1.4",
