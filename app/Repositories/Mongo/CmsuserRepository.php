@@ -136,13 +136,13 @@ class CmsuserRepository extends AbstractRepository implements CmsuserInterface
     public function store($postData)
     {
 
-
         $error_messages = array();
         $data = array_except($postData, ['password_confirmation']);
 
         //used keep the relastionship cloumn atleast if not selected
         array_set($data, 'roles', ["59857f03af21a2d02523fbe2"]);
- 	    if (isset($postData['photo']) && isset($postData['photo']['thumb'])) {
+
+        if (isset($postData['photo']) && isset($postData['photo']['thumb'])) {
             array_set($data, 'picture', $postData['photo']['thumb']);
         }
          $user = new $this->model($data);
@@ -249,9 +249,9 @@ class CmsuserRepository extends AbstractRepository implements CmsuserInterface
      */
     public function artistConfig($postData, $user)
     {
+
         $artist_role_id = '59857f03af21a2d02523fbe2';
 
-        if (!empty($postData['roles']) && in_array($artist_role_id, $postData['roles'])) {
             $data = [];
             $celebname                              =       preg_replace('/\s+/', '', strtolower(trim(@$user['first_name'])).strtolower(trim(@$user['last_name'])));
 
@@ -275,6 +275,6 @@ class CmsuserRepository extends AbstractRepository implements CmsuserInterface
                 $artistConfig = new \App\Models\Artistconfig($data);
                 $save = $artistConfig->save();
             }
-        }
+
     }
 }
