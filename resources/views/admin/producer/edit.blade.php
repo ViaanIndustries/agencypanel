@@ -84,12 +84,14 @@
 
                <div class="form-group">
                   <label for="title">Platform</label>
-                  {!! Form::select('platform[]', array('android' => 'Android', 'ios' => 'IOS'), old('platform'), array('multiple'=>true, 'class' => 'form-control select2 ' , "ui-jp" => "select2", 'ui-options' => "{theme: 'bootstrap'}" )) !!}
+
+                   {!! Form::select('platforms[]',array('android' => 'Android', 'ios' => 'IOS'), old('platform'), array('class' => 'form-control select2',  "multiple" => "multiple" ,"ui-jp" => "select2", 'ui-options' => "{theme: 'bootstrap'}" )) !!}
+
                </div>
 
                <div class="form-group">
                   <label for="title">Allow Packages</label>
-                  {!! Form::select('allow_packages[]', array('gift' => 'Gifts', 'comment' => 'Comments'), old('allow_packages'), array('class' => 'form-control select2-multiple' ,"multiple" => "multiple" , "ui-jp" => "select2", 'ui-options' => "{theme: 'bootstrap'}" )) !!}
+                  {!! Form::select('allow_packages[]', array('gift' => 'Gifts', 'comment' => 'Comments'), old('allow_packages'), array('class' => 'form-control select2' ,"multiple" => "multiple" , "ui-jp" => "select2", 'ui-options' => "{theme: 'bootstrap'}" )) !!}
 
                </div>
              

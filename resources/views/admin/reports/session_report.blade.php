@@ -272,7 +272,7 @@
                                                 <b> Coins Earned  :</b></br>
                                                 @if(isset($value['stats']['coin_spent'])) {!! $value['stats']['coin_spent'] !!} @endif
                                                 </br>
-                                                <b> Doller Rate  :</b></br>
+                                                <b> Dollar Rate  :</b></br>
                                                 @if(isset($value['doller_rate'])) {!! $value['doller_rate'] !!} @endif
                                                 </br>
                                                 <b> Total Earning :</b></br>
