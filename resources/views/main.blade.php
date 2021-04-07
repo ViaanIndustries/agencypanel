@@ -27,6 +27,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
  <!-- bootstrap multiple -->
 	     <link href="{{ asset("/bower_components/select2/dist/css/select2.min.css")}}" rel="stylesheet" type="text/css" />
 
+
+
+
  
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -96,6 +99,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
  <script>
+
+     $('.select2').select2()
+
 
      //Date picker
      $('.only_date').datepicker({

@@ -28,94 +28,110 @@
             <!-- form start -->
             {!! Form::model($cmsuser, array('route' => array('admin.cmsusers.update', $cmsuser->_id), 'method' => 'PUT', 'role'=>'form', 'files'=>true)) !!}
               <div class="box-body">
-              <div class="form-group">
+             <div class="col-sm-4">
                   <label for="exampleInputEmail1">First Name</label>
                    {!! Form::text('first_name', old('first_name'), array('class' => 'form-control', 'id'=> 'name', 'placeholder' => 'Enter first name' )) !!}
 
                 </div>
-                <div class="form-group">
+               <div class="col-sm-4">
                   <label for="exampleInputEmail1">Last Name </label>
                    {!! Form::text('last_name', old('last_name'), array('class' => 'form-control', 'id'=> 'name', 'placeholder' => 'Enter last name' )) !!}
 
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Profile Desc</label>
- 
-                  {!! Form::textarea('about_us', old('about_us'), array('class' => 'form-control', 'id'=> 'name', 'placeholder' => 'About Artist Desc' )) !!}
 
-
-                </div>
-                <div class="form-group">
+                <div class="col-sm-4">
                   <label for="exampleInputEmail1">DOB </label>
                    {!! Form::text('dob', old('dob'), array('class' => 'form-control dob', 'id'=> 'name', 'ui-jp'=>'datetimepicker' , 'placeholder' => 'Enter DOB' )) !!}
 
                 </div>
 
-                <div class="form-group">
+
+                <div class="col-sm-4">
                   <label for="exampleInputEmail1">Email </label>
                    {!! Form::text('email', old('email'), array('class' => 'form-control', 'id'=> 'name', 'placeholder' => 'Enter email' )) !!}
 
                 </div>
-                <div class="form-group">
+               <div class="col-sm-4">
                   <label for="exampleInputEmail1">City </label>
                    {!! Form::text('city', old('city'), array('class' => 'form-control', 'id'=> 'name', 'placeholder' => 'Enter city' )) !!}
 
                 </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Thank you message after live session end</label>
-                   {!! Form::textarea('signature_msg', old('signature_msg'), array('class' => 'form-control', 'id'=> 'name', 'placeholder' => 'Thank you message after live session end' )) !!}
 
-                </div>
-                <div class="form-group">
+                <div class="col-sm-4">
                   <label for="exampleInputPassword1">Mobile</label>
                    {!! Form::number('mobile', old('mobile'), array('class' => 'form-control', 'id'=> 'name', 'placeholder' => 'Enter mobile' )) !!}
 
                 </div>
 
-                <div class="form-group">
+            
+
+            
+
+               <div class="col-sm-4">
                   <label for="exampleInputPassword1">Coins</label>
                    {!! Form::number('coins', old('coins'), array( 'min'=>49 , 'max' =>1000000, 'class' => 'form-control', 'id'=> 'name', 'placeholder' => 'Enter session entry fee' )) !!}
 
                 </div>
-                <div class="form-group">
+               <div class="col-sm-4">
                   <label for="title">Status</label>
                   {!! Form::select('status', array('active' => 'Active', 'inactive' => 'Inactive'), old('status'), array('class' => 'form-control select2 ' , "ui-jp" => "select2", 'ui-options' => "{theme: 'bootstrap'}" )) !!}
                </div>
 
-               <div class="form-group">
+              <div class="col-sm-4">
                   <label for="title">Platform</label>
                   {!! Form::select('platform[]', array('android' => 'Android', 'ios' => 'IOS'), old('platform'), array('multiple'=>true, 'class' => 'form-control select2 ' , "ui-jp" => "select2", 'ui-options' => "{theme: 'bootstrap'}" )) !!}
                </div>
 
-               <div class="form-group">
+              <div class="col-sm-4">
                   <label for="title">Allow Packages</label>
-                  {!! Form::select('allow_packages[]', array('gift' => 'Gifts', 'comment' => 'Comments'), old('allow_packages'), array('class' => 'form-control select2-multiple' ,"multiple" => "multiple" , "ui-jp" => "select2", 'ui-options' => "{theme: 'bootstrap'}" )) !!}
+                  {!! Form::select('allow_packages[]', array('gift' => 'Gifts', 'comment' => 'Comments'), old('allow_packages'), array('class' => 'form-control select2' ,"multiple" => "multiple" , "ui-jp" => "select2", 'ui-options' => "{theme: 'bootstrap'}" )) !!}
 
                </div>
              
              
 
-               <div class="form-group">
+              <div class="col-sm-4">
                   <label for="title">Is featured?</label>
                   {!! Form::select('is_featured', array(true => 'Yes', false => 'No'), old('is_featured'), array('class' => 'form-control select2 ' , "ui-jp" => "select2", 'ui-options' => "{theme: 'bootstrap'}" )) !!}
                </div>
 
 
 
-               <div class="form-group">
+              <div class="col-sm-4">
                   <label for="title">Is Beneficial?</label>
                   {!! Form::select('is_beneficial', array(true => 'Yes', false => 'No'), old('is_beneficial'), array('class' => 'form-control select2 ' , "ui-jp" => "select2", 'ui-options' => "{theme: 'bootstrap'}" )) !!}
                </div>
 
              
              
-               
-                <div class="form-group">
+             
+
+
+                 <div class="col-sm-4">
+                  <label for="exampleInputEmail1">Profile Desc</label>
+ 
+                  {!! Form::textarea('about_us', old('about_us'), array('class' => 'form-control', 'id'=> 'name', 'placeholder' => 'About Artist Desc' )) !!}
+
+
+                </div>
+              
+
+ 
+                <div class="col-sm-4">
+                  <label for="exampleInputPassword1">Thank you message after live session end</label>
+                   {!! Form::textarea('signature_msg', old('signature_msg'), array('class' => 'form-control', 'id'=> 'name', 'placeholder' => 'Thank you message after live session end' )) !!}
+
+                </div>
+            
+                
+                <div class="col-sm-4">
                   <label for="exampleInputFile">Artist Photo</label>
                   {!! Form::file('picture', old('picture'), array('class' => 'form-control', 'id'=> 'photo' )) !!}
                   <img style="height:100px; width:100px" src= <?php echo apply_cloudfront_url($cmsuser['picture']) ?> >
                  </div>
                  
+
+
               </div>
               <!-- /.box-body -->
 
