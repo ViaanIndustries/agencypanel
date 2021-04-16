@@ -559,7 +559,7 @@ class LiveRepository extends AbstractRepository implements LiveInterface
 
 
         $artist_list = Cmsuser::where('agency', $agency_id)->whereIn('roles', $artist_role_ids)->pluck('_id');
-        $query = Live::where('is_refund', '<>', true)->with(array('artist' => function ($q) {
+        $query = Live::where('is_refund', '<>', true)->where('artist_id','<>',"5d3ee748929d960e7d388ee2")->with(array('artist' => function ($q) {
             $q->select('_id', 'picture', 'coins', 'stats', 'first_name', 'last_name', 'about_us', 'city', 'agency', 'mobile', 'email', 'dob');
         }));
         if (!empty($artist_id)) {
