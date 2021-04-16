@@ -516,19 +516,12 @@ class LiveRepository extends AbstractRepository implements LiveInterface
 
         if ($created_at_end != '') {
             $query->where("created_at", '<=', $created_at_end);
-
         }
-
-
         return $query;
-
-
     }
-
 
     public function index($requestData, $perpage = NULL)
     {
-
         $results = [];
         $perpage = ($perpage == NULL) ? Config::get('app.perpage') : intval($perpage);
         $sort = (isset($requestData['sort']) && $requestData['sort'] != '') ? $requestData['sort'] : '';
@@ -537,9 +530,8 @@ class LiveRepository extends AbstractRepository implements LiveInterface
         $artist_id = (isset($requestData['artist_id']) && $requestData['artist_id'] != '') ? $requestData['artist_id'] : '';
         $created_at = (isset($requestData['created_at']) && $requestData['created_at'] != '') ? hyphen_date($requestData['created_at']) : '';
         $created_at_end = (isset($requestData['created_at_end']) && $requestData['created_at_end'] != '') ? hyphen_date($requestData['created_at_end']) : '';
-        $appends_array = array('artist_id' => $artist_id,  'sort' => $sort, 'agency_id' => $agency_id, 'created_at' => $created_at,
+        $appends_array = array('artist_id' => $artist_id, 'sort' => $sort, 'agency_id' => $agency_id, 'created_at' => $created_at,
             'created_at_end' => $created_at_end, 'sort' => $sort);
-
         $items = $this->getLiveHistory($requestData)->paginate($perpage);
         $data = $items->toArray();
         $array = array_pluck($data['data'], 'total_earning_doller');
@@ -551,7 +543,8 @@ class LiveRepository extends AbstractRepository implements LiveInterface
         $results['appends_array'] = $appends_array;
         return $results;
     }
-        public function getLiveHistory($requestData,$perpage = NULL)
+
+    public function getLiveHistory($requestData, $perpage = NULL)
     {
         $perpage = ($perpage == NULL) ? Config::get('app.perpage') : intval($perpage);
         $sort = (isset($requestData['sort']) && $requestData['sort'] != '') ? $requestData['sort'] : '';
@@ -561,7 +554,7 @@ class LiveRepository extends AbstractRepository implements LiveInterface
         $created_at = (isset($requestData['created_at']) && $requestData['created_at'] != '') ? hyphen_date($requestData['created_at']) : '';
         $created_at_end = (isset($requestData['created_at_end']) && $requestData['created_at_end'] != '') ? hyphen_date($requestData['created_at_end']) : '';
 
-        $artist_role_ids = \App\Models\Role::where('slug', 'artist')->pluck('_id');
+        $artist_role_ids = \App\Models\Role::where('slug', 'artist')->where('artist_id', '<>', "5d3ee748929d960e7d388ee2")->pluck('_id');
         $artist_role_ids = ($artist_role_ids) ? $artist_role_ids->toArray() : [];
 
 
@@ -583,11 +576,9 @@ class LiveRepository extends AbstractRepository implements LiveInterface
         }
         if ($sort == 'coins') {
             $query->orderby('stats.coin_spent', 'DESC');
-        } else if ($sort == 'views')
-        {
+        } else if ($sort == 'views') {
             $query->orderby('stats.views', 'DESC');
-        }else if($sort == 'gifts')
-        {
+        } else if ($sort == 'gifts') {
             $query->orderby('stats.gifts', 'DESC');
         }
         return $query;
