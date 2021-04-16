@@ -39,12 +39,8 @@ class ArtistLiveSessionExport implements FromArray, WithHeadings
         $list['total_views'] = $value['stats']['views'];
         $list['total_gifts'] = $value['stats']['gifts'];
         $list['doller_rate_per_coin'] = $value['doller_rate'];
-
         $list['total_coins_earned'] = $value['stats']['coin_spent'];
-
         $list['total_earning_doller'] = $value['total_earning_doller'];
-
-
         $finaldata[] = $list;
 
 
