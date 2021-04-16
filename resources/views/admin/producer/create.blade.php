@@ -125,7 +125,7 @@
                
                 <div class="col-sm-4">
                   <label for="title">Platform</label>
-                   {!! Form::select('platforms[]',array('android' => 'Android', 'ios' => 'IOS'), 'android', array('class' => 'form-control select2',  "multiple" => "multiple" ,"ui-jp" => "select2", 'ui-options' => "{theme: 'bootstrap'}" )) !!}
+                   {!! Form::select('platform[]',array('android' => 'Android', 'ios' => 'IOS'), 'android', array('class' => 'form-control select2',  "multiple" => "multiple" ,"ui-jp" => "select2", 'ui-options' => "{theme: 'bootstrap'}" )) !!}
 
                </div>
 

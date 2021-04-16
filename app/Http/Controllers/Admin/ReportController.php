@@ -15,15 +15,17 @@ class ReportController extends Controller
 {
 
     protected $artistservice;
-    protected $agencyservice;
     protected $liveservice;
+
+    protected $agencyservice;
 
 
     public function __construct(ArtistService $artistservice, AgencyService $agencyservice, LiveService $liveservice)
     {
         $this->artistservice = $artistservice;
-        $this->agencyservice = $agencyservice;
         $this->liveservice = $liveservice;
+
+        $this->agencyservice = $agencyservice;
 
         $this->page_title = "Session Report";
         $this->page_desc = "Artist Live Session Report ";
@@ -42,7 +44,6 @@ class ReportController extends Controller
     public function getSessionReport(Request $request)
     {
          $viewdata = [];
-
          switch ($request->actionbutton) {
 
             case 'Search':

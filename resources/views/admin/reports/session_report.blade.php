@@ -186,7 +186,7 @@
                             <td>
 
                                 {!! Form::submit( 'Search', ['class' => 'btn btn-primary', 'name' => 'actionbutton', 'value' => 'search'])!!}
-            {!! link_to('session-report','Reset', array('class' => 'btn btn-warning ')) !!}
+            {!! link_to('agency/session/report','Reset', array('class' => 'btn btn-warning ')) !!}
 
           {!! Form::submit( 'Export', ['class' => 'btn btn-danger', 'name' => 'actionbutton', 'value' => 'export'])!!}
 
@@ -279,7 +279,6 @@
                                                 @if(isset($value['total_earning_doller'])) {!! $value['total_earning_doller'] !!} @endif
                                                 </br>
                                             </td>
-
 
                                         </tr>
                                     @empty
