@@ -30,7 +30,7 @@ class ArtistLiveSessionExport implements FromArray, WithHeadings
      foreach($data as $key => $value)
      {
         $list['first_name'] = $value['artist']['first_name'];
-        $list['last_name'] = $value['artist']['first_name'];
+        $list['last_name'] = $value['artist']['last_name'];
         $list['mobile'] = $value['artist']['mobile'];
         $list['email'] = $value['artist']['email'];
         $list['live_session_entry'] = $value['artist']['coins'];
@@ -95,8 +95,8 @@ public function export_live_session()
 public function headings(): array
 {
     return [
-        'name',
-        'email',
+        'first name',
+        'last name',
         'mobile',
         'email',
         'live session entry fee',
