@@ -102,21 +102,13 @@
                   {!! Form::select('is_beneficial', array(true => 'Yes', false => 'No'), old('is_beneficial'), array('class' => 'form-control select2 ' , "ui-jp" => "select2", 'ui-options' => "{theme: 'bootstrap'}" )) !!}
                </div>
 
-             
-             
-             
-
-
                  <div class="col-sm-4">
                   <label for="exampleInputEmail1">Profile Desc</label>
  
                   {!! Form::textarea('about_us', old('about_us'), array('class' => 'form-control', 'id'=> 'name', 'placeholder' => 'About Artist Desc' )) !!}
 
-
                 </div>
               
-
- 
                 <div class="col-sm-4">
                   <label for="exampleInputPassword1">Thank you message after live session end</label>
                    {!! Form::textarea('signature_msg', old('signature_msg'), array('class' => 'form-control', 'id'=> 'name', 'placeholder' => 'Thank you message after live session end' )) !!}
@@ -130,8 +122,6 @@
                   <img style="height:100px; width:100px" src= <?php echo apply_cloudfront_url($cmsuser['picture']) ?> >
                  </div>
                  
-
-
               </div>
               <!-- /.box-body -->
 
@@ -141,5 +131,4 @@
             </form>
           </div>
          
-
 @endsection
